@@ -1,0 +1,27 @@
+boleanos de python
+Valores booleanos
+En programación, a menudo es necesario saber si una expresión es o .TrueFalse
+
+Puede evaluar cualquier expresión en Python y obtener una de las dos respuestas, o .TrueFalse
+
+Al comparar dos valores, se evalúa la expresión y Python devuelve la respuesta booleana:
+
+Ejemplo Python
+print(10 > 9)
+print(10 == 9)
+print(10 < 9)
+
+Cuando se ejecuta una condición en una instrucción if, Python devuelve o :TrueFalse
+
+Ejemplo
+Imprima un mensaje en función de si la condición es o :True o False
+
+a = 200
+b = 33
+
+if b > a:
+  print("b es mayor que a")
+else:
+  print("b no es mayor que a")
+
+respuesta= #no es mayor que a
