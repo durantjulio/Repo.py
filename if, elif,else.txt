@@ -1,0 +1,147 @@
+Condiciones de Python y sentencias If
+Python soporta las condiciones lógicas habituales de las matemáticas:
+
+Es igual a: a == b
+No es igual a: a != b
+Menor que: a < b
+Menor o igual que: a <= b
+Mayor que: a > b
+Mayor o igual que: a >= b
+Estas condiciones se pueden usar de varias maneras, más comúnmente en "instrucciones if" y bucles.
+
+Una "instrucción if" se escribe utilizando la palabra clave if.
+
+EjemploObtenga su propio servidor Python
+Instrucción if:
+
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+En este ejemplo usamos dos variables, a y b, que se utilizan como parte de la instrucción if para probar si b es mayor que a. Como a es 33 y b es 200, Sabemos que 200 es mayor que 33, por lo que imprimimos en pantalla que "B es mayor que A".
+
+Sangría
+Python se basa en la sangría (espacio en blanco al principio de una línea) para definir el alcance en el código. Otros lenguajes de programación a menudo usan corchetes rizados para este propósito.
+
+Ejemplo
+Instrucción if, sin sangría (generará un error):
+
+a = 33
+b = 200
+if b > a:
+print("b is greater than a") # you will get an error
+
+Elif
+La palabra clave elif es la forma en que Python dice "si las condiciones anteriores no eran ciertas, entonces pruebe esta condición".
+
+Ejemplo
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+En este ejemplo, a es igual a b, por lo que la primera condición no es verdadera, pero la condición elif es verdadera, por lo que imprimimos en pantalla que "a y b son iguales".
+
+Más
+La palabra clave else detecta todo lo que no se detecta en las condiciones anteriores.
+
+Ejemplo
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+En este ejemplo, a es mayor que b, Por lo tanto, la primera condición no es verdadera, también la condición ELIF no es verdadera, Así que vamos a la condición else e imprimimos para tramar que "a es mayor que b".
+
+También puede tener un sin el :elseelif
+
+Ejemplo
+a = 200
+b = 33
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+Abreviatura Si
+Si solo tiene una instrucción para ejecutar, puede colocarla en la misma línea que la instrucción if.
+
+Ejemplo
+Una línea de declaración if:
+
+if a > b: print("a is greater than b")
+Mano corta si ... Más
+Si solo tiene una instrucción para ejecutar, una para if y otra para else, puede ponerla todos en la misma línea:
+
+Ejemplo
+Una línea if else instrucción:
+
+a = 2
+b = 330
+print("A") if a > b else print("B")
+Esta técnica se conoce como Operadores Ternarios o Condicionales expresiones.
+
+También puede tener varias sentencias else en la misma línea:
+
+Ejemplo
+Una instrucción if else de una línea, con 3 condiciones:
+
+a = 330
+b = 330
+print("A") if a > b else print("=") if a == b else print("B")
+Y
+La palabra clave and es un operador lógico, y se utiliza para combinar sentencias condicionales:
+
+Ejemplo
+Pruebe si es mayor que , Y si es mayor que :abca
+
+a = 200
+b = 33
+c = 500
+if a > b and c > a:
+  print("Both conditions are True")
+O
+La palabra clave es un operador lógico y se utiliza para combinar sentencias condicionales:or
+
+Ejemplo
+Pruebe si es mayor que , O si es mayor que :abac
+
+a = 200
+b = 33
+c = 500
+if a > b or a > c:
+  print("At least one of the conditions is True")
+No
+La palabra clave es un operador lógico y se utiliza para revertir el resultado de la instrucción condicional:not
+
+Ejemplo
+Pruebe si NO es mayor que:ab
+
+a = 33
+b = 200
+if not a > b:
+  print("a is NOT greater than b")
+Anidado If
+Puede tener instrucciones dentro de instrucciones, esto se llama declaraciones anidadas.ififif
+
+Ejemplo
+x = 41
+
+if x > 10:
+  print("Above ten,")
+  if x > 20:
+    print("and also above 20!")
+  else:
+    print("but not above 20.")
+La declaración de pase
+if Las instrucciones no pueden estar vacías, pero si Por alguna razón, tenga una declaración sin contenido, póngala en la declaración para evitar obtener un error.ifpass
+
+Ejemplo
+a = 33
+b = 200
+
+if b > a:
+  pass
