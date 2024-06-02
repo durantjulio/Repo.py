@@ -1,7 +1,8 @@
-intro python
+intro variables python
 importar: print("hola mundo")
 
-int:numero, str:letras float:numeros con decimales
+int:numero, str:letras float:numeros con decimales dict:{} tuple:() list()
+
 
 se puede poner escribir variables en una linea:
 x, y, z = "Orange", "Banana", "Cherry"
@@ -18,7 +19,7 @@ print(z) #orange
 Si tiene una colección de valores en una lista, tupla, etc. Python le permite extraer los valores en variables. A esto se le llama desempaquetar.
 
 Descomprimir una lista:
-fruits = ["apple", "banana", "cherry"]
+fruits = ["apple", "banana", "cherry"] #tuple cuando es on ()
 x, y, z = fruits
 print(x)
 print(y)
@@ -39,7 +40,7 @@ print(x, y, z) #Python es lo mejor
 def se utiliza para definir una funcion 
 Las variables globales pueden ser utilizadas por todo el mundo, tanto dentro de funciones y exteriores.
 
-Cree una variable fuera de una función y utilícela dentro de la función:
+Cree una variable fuera de una función y utilícela dentro de la función: (local)
 
 x = "increible"
 
@@ -47,3 +48,25 @@ def myfunc():
   print("Python es " + x) #Python es increible
 
 myfunc()
+
+Normalmente, cuando se crea una variable dentro de una función, esa variable es local, y solo se puede usar dentro de esa función.Para crear una variable global dentro de una función, puede utilizar la palabra clave(global)
+
+Si utiliza la palabra clave, la variable pertenece al ámbito global:global
+
+def myfunc():
+  global x
+  x = "fantastico"
+myfunc()
+print("Python es " + x) #Python es fantastico
+
+Para cambiar el valor de una variable global dentro de una función, consulte la variable mediante el uso de la palabra clave:global
+
+x = "mejor"
+
+def myfunc():
+  global x
+  x = "fantastico"
+
+myfunc()
+
+print("Python es " + x) #Python es fantatico
