@@ -1,0 +1,228 @@
+funciones de python
+Una función es un bloque de código que solo se ejecuta cuando se llama.
+
+Puede pasar datos, conocidos como parámetros, a una función.
+
+Como resultado, una función puede devolver datos.
+
+Creación de una función
+En Python, una función se define usando la palabra clave def:
+
+EjemploObtenga su propio servidor Python
+def my_function():
+  print("Hello from a function")
+Llamar a una función
+Para llamar a una función, use el nombre de la función seguido de un paréntesis:
+
+Ejemplo
+def my_function():
+  print("Hello from a function")
+
+my_function()
+Argumentos
+La información se puede pasar a funciones como argumentos.
+
+Los argumentos se especifican después del nombre de la función, entre paréntesis. Puedes agregar tantos argumentos como quieras, solo sepáralos con una coma.
+
+En el ejemplo siguiente se muestra una función con un argumento (fname). Cuando se llama a la función, pasamos un nombre de pila, que se usa dentro de la función para imprimir el nombre completo:
+
+Ejemplo
+def my_function(fname):
+  print(fname + " Refsnes")
+
+my_function("Emil")
+my_function("Tobias")
+my_function("Linus")
+Los argumentos a menudo se acortan a args en las documentaciones de Python.
+
+ANUNCIO
+
+¿Parámetros o argumentos?
+Los términos parámetro y argumento se pueden usar para lo mismo: información que se pasa a una función.
+
+Desde la perspectiva de una función:
+
+Un parámetro es la variable que aparece entre paréntesis en la definición de la función.
+
+Un argumento es el valor que se envía a la función cuando se llama.
+
+Número de argumentos
+De forma predeterminada, se debe llamar a una función con el número correcto de argumentos. Lo que significa que si tu función espera 2 argumentos, tienes que llamar a la función con 2 argumentos, ni más, ni menos.
+
+Ejemplo
+Esta función espera 2 argumentos y obtiene 2 argumentos:
+
+def my_function(fname, lname):
+  print(fname + " " + lname)
+
+my_function("Emil", "Refsnes")
+Si intentas llamar a la función con 1 o 3 argumentos, obtendrás un error:
+Ejemplo
+Esta función espera 2 argumentos, pero solo obtiene 1:
+
+def my_function(fname, lname):
+  print(fname + " " + lname)
+
+my_function("Emil")
+Argumentos arbitrarios, *args
+Si no sabe cuántos argumentos se pasarán a su función, Agregue un antes del nombre del parámetro en la definición de la función.*
+
+De esta manera, la función recibirá una tupla de argumentos y podrá acceder a los elementos en consecuencia:
+
+Ejemplo
+Si se desconoce el número de argumentos, agregue un antes del nombre del parámetro:*
+
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
+
+my_function("Emil", "Tobias", "Linus")
+Los argumentos arbitrarios a menudo se acortan a *args en las documentaciones de Python.
+
+Argumentos de palabras clave
+También puede enviar argumentos con la sintaxis clave = valor.
+
+De esta manera, el orden de los argumentos no importa.
+
+Ejemplo
+def my_function(child3, child2, child1):
+  print("The youngest child is " + child3)
+
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
+La frase Keyword Arguments a menudo se acorta a kwargs en las documentaciones de Python.
+
+Argumentos arbitrarios de palabras clave, **kwargs
+Si no sabe cuántos argumentos de palabras clave se pasarán a su función, Agregue dos asteriscos: antes del nombre del parámetro en la definición de la función.**
+
+De esta manera, la función recibirá un diccionario de argumentos y podrá acceder a los elementos en consecuencia:
+
+Ejemplo
+Si se desconoce el número de argumentos de palabras clave, agregue un doble antes del nombre del parámetro:**
+
+def my_function(**kid):
+  print("His last name is " + kid["lname"])
+
+my_function(fname = "Tobias", lname = "Refsnes")
+Los argumentos arbitrarios de Kword a menudo se acortan a **kwargs en las documentaciones de Python.
+
+Valor de parámetro predeterminado
+En el ejemplo siguiente se muestra cómo utilizar un valor de parámetro predeterminado.
+
+Si llamamos a la función sin argumento, usa el valor predeterminado:
+
+Ejemplo
+def my_function(country = "Norway"):
+  print("I am from " + country)
+
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil")
+Pasar una lista como argumento
+Puede enviar cualquier tipo de datos de argumento a una función (cadena, número, lista, diccionario, etc.), Y lo hará se tratarán como el mismo tipo de datos dentro de la función.
+
+Por ejemplo, si envías una lista como argumento, seguirá siendo una lista cuando alcanza la función:
+
+Ejemplo
+def my_function(food):
+  for x in food:
+    print(x)
+
+fruits = ["apple", "banana", "cherry"]
+
+my_function(fruits)
+Return Values
+To let a function return a value, use the statement:return
+
+Example
+def my_function(x):
+  return 5 * x
+
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+The pass Statement
+function definitions cannot be empty, but if you for some reason have a definition with no content, put in the statement to avoid getting an error.functionpass
+
+Example
+def myfunction():
+  pass
+Positional-Only Arguments
+You can specify that a function can have ONLY positional arguments, or ONLY keyword arguments.
+
+To specify that a function can have only positional arguments, add after the arguments:, /
+
+Example
+def my_function(x, /):
+  print(x)
+
+my_function(3)
+Without the you are actually allowed to use keyword arguments even if the function expects positional arguments:, /
+
+Example
+def my_function(x):
+  print(x)
+
+my_function(x = 3)
+But when adding the you will get an error if you try to send a keyword argument:, /
+
+Example
+def my_function(x, /):
+  print(x)
+
+my_function(x = 3)
+Keyword-Only Arguments
+To specify that a function can have only keyword arguments, add before the arguments:*,
+
+Example
+def my_function(*, x):
+  print(x)
+
+my_function(x = 3)
+Without the you are allowed to use positionale arguments even if the function expects keyword arguments:*,
+
+Example
+def my_function(x):
+  print(x)
+
+my_function(3)
+But when adding the you will get an error if you try to send a positional argument:*, /
+
+Example
+def my_function(*, x):
+  print(x)
+
+my_function(3)
+Combine Positional-Only and Keyword-Only
+You can combine the two argument types in the same function.
+
+Any argument before the are positional-only, and any argument after the are keyword-only./ ,*,
+
+Example
+def my_function(a, b, /, *, c, d):
+  print(a + b + c + d)
+
+my_function(5, 6, c = 7, d = 8)
+Recursión
+Python también acepta la recursividad de funciones, lo que significa que una función definida puede llamarse a sí misma.
+
+La recursividad es un concepto matemático y de programación común. Significa que una función se llama a sí misma. Esto tiene la ventaja de significar que puede recorrer los datos para llegar a un resultado.
+
+El desarrollador debe tener mucho cuidado con la recursividad, ya que puede ser bastante fácil caer en la escritura de una función que nunca termina, o una que usa cantidades excesivas de memoria o potencia del procesador. Sin embargo, cuando se escribe correctamente, la recursividad puede ser un enfoque muy eficiente y matemáticamente elegante para la programación.
+
+En este ejemplo, tri_recursion() es una función que hemos definido para llamarse a sí misma ("recurse"). Usamos la variable k como dato, que disminuye (-1) cada vez que recursamos. La recursividad termina cuando la condición no es mayor que 0 (es decir, cuando es 0).
+
+Para un nuevo desarrollador, puede llevar algún tiempo averiguar cómo funciona exactamente esto, la mejor manera de averiguarlo es probándolo y modificándolo.
+
+Ejemplo
+Ejemplo de recursividad
+
+def tri_recursion(k):
+  if(k > 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print("\n\nRecursion Example Results")
+tri_recursion(6)
